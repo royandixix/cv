@@ -1,37 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Roy Andi — Software Engineer Portfolio
+
+A modern, responsive, and animated developer portfolio built with cutting-edge technologies.
+
+---
+
+## Features
+
+| Feature | Description |
+|---|---|
+| Modern UI/UX | Clean, professional dark theme design |
+| Fully Responsive | Optimized for all screen sizes |
+| Smooth Animations | Powered by Framer Motion |
+| GitHub Integration | Dynamic GitHub stats & repositories |
+| Download CV | One-click resume download |
+| App Router | Built with Next.js App Router |
+| Component Library | shadcn/ui + Lucide Icons |
+
+---
+
+## Tech Stack
+
+- **Framework** — [Next.js](https://nextjs.org) (App Router)
+- **Language** — [TypeScript](https://www.typescriptlang.org)
+- **Styling** — [Tailwind CSS](https://tailwindcss.com)
+- **Animation** — [Framer Motion](https://www.framer.com/motion)
+- **UI Components** — [shadcn/ui](https://ui.shadcn.com)
+- **Icons** — [Lucide Icons](https://lucide.dev)
+
+---
+
+## Project Structure
+
+```
+src/
+ ├── app/                  # Next.js App Router pages
+ ├── components/
+ │    ├── layout/          # Navbar, Footer
+ │    ├── sections/        # Hero, About, Skills, Projects, Contact
+ │    └── ui/              # Reusable UI components
+ ├── hooks/                # Custom React hooks
+ ├── lib/                  # Utility functions
+ ├── data/                 # Static data & constants
+ └── types/                # TypeScript type definitions
+```
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+Make sure you have **Node.js 18+** and **npm** installed.
+
+### Installation
 
 ```bash
+# 1. Clone the repository
+git clone https://github.com/royandixix/software-engineer-portfolio.git
+
+# 2. Navigate to project folder
+cd software-engineer-portfolio
+
+# 3. Install dependencies
+npm install
+
+# 4. Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Portfolio Sections
 
-## Learn More
+- **Hero** — Introduction & call-to-action
+- **About** — Background & personal info
+- **Skills** — Tech stack & tools
+- **Projects** — Featured work & open source
+- **Contact** — Get in touch form
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Live Demo
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Coming Soon...
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contact
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# software-engineer-portfolio
+GitHub: [https://github.com/royandixix](https://github.com/royandixix)
+
+---
+
+## License
+
+This project is open-source and available under the [MIT License](LICENSE).
