@@ -11,6 +11,7 @@ import {
   Menu,
   X,
   Code2,
+  Braces,
 } from "lucide-react";
 
 export default function Navbar() {
@@ -64,11 +65,13 @@ export default function Navbar() {
       <header className="md:hidden fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-black/40 border-b border-white/10">
         <div className="flex items-center justify-between px-6 py-4">
 
-          <div className="font-semibold text-white">
+          {/* ✅ Tambah icon Braces di samping tulisan */}
+          <div className="flex items-center gap-2 font-semibold text-white">
+            <Braces size={16} className="text-zinc-400" />
             Software <span className="text-zinc-500">Engineer</span>
           </div>
 
-          {/* 🔥 ANIMATED TOGGLE BUTTON */}
+          {/* ANIMATED TOGGLE BUTTON */}
           <motion.button
             onClick={() => setOpen(!open)}
             className="text-white relative w-10 h-10 flex items-center justify-center"

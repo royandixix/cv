@@ -61,7 +61,11 @@ export default function About() {
               Informatics Engineering
             </span>
             . I focus on building modern, scalable, and high-performance web applications
-            as a Fullstack Web Developer and Software Engineer.
+            as a Fullstack Web Developer and Software Engineer. My passion lies in
+            crafting seamless user experiences on the frontend while ensuring robust,
+            efficient, and maintainable systems on the backend. I enjoy turning complex
+            problems into simple, elegant, and practical solutions through clean code
+            and thoughtful architecture.
           </motion.p>
 
           {/* ORGANIZATION */}
@@ -75,9 +79,15 @@ export default function About() {
             <span className="text-white font-medium">
               UKM KeDai Computerworks
             </span>
-            . I started as <span className="text-white">Scientific Staff (2024–2025)</span>,
-            then became <span className="text-white">Scientific Coordinator</span>,
-            and currently serve as <span className="text-white">Vice Chairman II (2025–2026)</span>.
+            , a student organization focused on technology, programming, and digital
+            innovation. I started as <span className="text-white">Scientific Staff (2024–2025)</span>,
+            where I contributed to research activities, technical workshops, and knowledge-sharing
+            sessions within the organization. I then advanced to the role of{" "}
+            <span className="text-white">Scientific Coordinator</span>, taking on greater
+            responsibility in planning and leading technical programs. Currently, I serve as{" "}
+            <span className="text-white">Vice Chairman II (2025–2026)</span>, where I oversee
+            organizational development, coordinate inter-division collaboration, and help drive
+            the vision of the organization forward.
           </motion.p>
 
           {/* SKILLS */}
