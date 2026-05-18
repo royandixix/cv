@@ -28,12 +28,12 @@ export default function Footer() {
             </h2>
 
             <p className="text-sm text-zinc-400 max-w-md">
-              Fullstack Developer — Next.js, React, Node.js
+              Fullstack Developer — Software Engineer
             </p>
 
             <div className="flex items-center gap-2 text-xs text-zinc-500">
               <MapPin size={14} />
-              Makassar, Indonesia
+              Mamuju Sulawesi Barat, Indonesia
             </div>
           </div>
 
