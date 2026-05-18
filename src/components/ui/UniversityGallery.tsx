@@ -9,7 +9,6 @@ export default function UniversityGallery() {
     <section className="w-full py-20 flex justify-center">
       <div className="max-w-5xl w-full px-6">
 
-        {/* HEADER */}
         <div className="grid md:grid-cols-2 gap-10 items-start mb-14">
           
           <div className="md:ml-12">
@@ -25,10 +24,8 @@ export default function UniversityGallery() {
           <div className="hidden md:block" />
         </div>
 
-        {/* CONTENT */}
         <div className="grid md:grid-cols-2 gap-10 items-center">
 
-          {/* LEFT - LOGO */}
           <div className="flex justify-start md:justify-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -41,12 +38,12 @@ export default function UniversityGallery() {
                 src="/images/logo/logo.png"
                 alt="Universitas Dipa Makassar"
                 fill
+                sizes="(max-width: 768px) 100vw, 320px"
                 className="object-contain"
               />
             </motion.div>
           </div>
 
-          {/* RIGHT - TEXT + BUTTONS */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -63,10 +60,8 @@ export default function UniversityGallery() {
               This represents my learning journey, campus experience, and development in software engineering fundamentals.
             </p>
 
-            {/* BUTTONS (MATCH STYLE KAMU) */}
             <div className="flex flex-wrap gap-3 mt-6">
 
-              {/* WEBSITE */}
               <a
                 href="https://site.undipa.ac.id/"
                 target="_blank"
@@ -80,7 +75,6 @@ export default function UniversityGallery() {
                 Website
               </a>
 
-              {/* INSTAGRAM */}
               <a
                 href="https://www.instagram.com/undipamks/"
                 target="_blank"

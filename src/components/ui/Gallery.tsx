@@ -15,7 +15,6 @@ export default function UniversityGallery() {
   return (
     <section className="w-full py-20 flex justify-center">
       <div className="max-w-5xl w-full px-6">
-
         {/* HEADER */}
         <div className="grid md:grid-cols-2 gap-10 items-start mb-14">
           <div className="md:ml-12">
@@ -33,7 +32,6 @@ export default function UniversityGallery() {
 
         {/* CONTENT */}
         <div className="grid md:grid-cols-2 gap-10 items-center">
-
           {/* LOGO */}
           <div className="flex justify-start md:justify-center">
             {logos.map((item, i) => (
@@ -49,6 +47,7 @@ export default function UniversityGallery() {
                   src={item.img}
                   alt={item.alt}
                   fill
+                  sizes="(max-width: 768px) 100vw, 500px"
                   className="object-contain"
                   priority
                 />
@@ -76,7 +75,6 @@ export default function UniversityGallery() {
 
             {/* BUTTONS */}
             <div className="flex flex-wrap gap-3 mt-6">
-
               {/* WEBSITE */}
               <a
                 href="https://kedai.or.id/"
@@ -104,10 +102,8 @@ export default function UniversityGallery() {
                 </span>
                 Instagram
               </a>
-
             </div>
           </motion.div>
-
         </div>
       </div>
     </section>

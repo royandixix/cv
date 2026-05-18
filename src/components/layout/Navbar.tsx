@@ -31,13 +31,10 @@ export default function Navbar() {
     const handleScroll = () => {
       const sections = links.map((link) => ({
         id: link.href.replace("#", ""),
-        element: document.getElementById(
-          link.href.replace("#", "")
-        ),
+        element: document.getElementById(link.href.replace("#", "")),
       }));
 
-      const scrollPosition =
-        window.scrollY + window.innerHeight / 3;
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
 
       sections.forEach((section) => {
         if (!section.element) return;
@@ -84,8 +81,7 @@ export default function Navbar() {
             {links.map((link) => {
               const Icon = link.icon;
 
-              const isActive =
-                activeSection === link.href.replace("#", "");
+              const isActive = activeSection === link.href.replace("#", "");
 
               return (
                 <a
@@ -147,11 +143,7 @@ export default function Navbar() {
           <div
             className={`
               w-2 h-2 rounded-full transition-all duration-300
-              ${
-                activeSection === "contact"
-                  ? "bg-white"
-                  : "bg-zinc-500"
-              }
+              ${activeSection === "contact" ? "bg-white" : "bg-zinc-500"}
             `}
           />
         </div>
@@ -165,7 +157,6 @@ export default function Navbar() {
         "
       >
         <div className="flex items-center justify-between px-6 py-4">
-
           {/* LOGO */}
           <div className="flex items-center gap-2 font-semibold text-white">
             <Braces size={16} className="text-zinc-400" />
@@ -271,24 +262,20 @@ export default function Navbar() {
               {/* PROFILE */}
               <div className="mb-8 p-4 rounded-2xl bg-white/5 border border-white/10">
                 <div className="flex items-center gap-3">
-
                   <div className="relative w-11 h-11">
                     <Image
-                      src="/images/WhatsApp Image 2026-05-16 at 12.49.26 AM.jpeg"
-                      alt="profile"
-                      fill
-                      className="rounded-full object-cover"
-                    />
+  src="/images/WhatsApp Image 2026-05-16 at 12.49.26 AM.jpeg"
+  alt="profile"
+  fill
+  sizes="44px"
+  className="rounded-full object-cover"
+/>
                   </div>
 
                   <div>
-                    <h3 className="text-white text-sm font-medium">
-                      Roy Andi
-                    </h3>
+                    <h3 className="text-white text-sm font-medium">Roy Andi</h3>
 
-                    <p className="text-zinc-400 text-xs">
-                      Software Engineer
-                    </p>
+                    <p className="text-zinc-400 text-xs">Software Engineer</p>
                   </div>
                 </div>
 
@@ -303,8 +290,7 @@ export default function Navbar() {
                 {links.map((link) => {
                   const Icon = link.icon;
 
-                  const isActive =
-                    activeSection === link.href.replace("#", "");
+                  const isActive = activeSection === link.href.replace("#", "");
 
                   return (
                     <a
@@ -331,9 +317,7 @@ export default function Navbar() {
 
               {/* FOOTER */}
               <div className="absolute bottom-6 left-6 right-6">
-                <div className="text-xs text-zinc-500">
-                  Built with Next.js & Tailwind CSS
-                </div>
+                <div className="text-xs text-zinc-500">© 2026 Roy Andi</div>
               </div>
             </motion.div>
           </>

@@ -9,6 +9,7 @@ import { Toaster } from "@/components/ui/sonner";
 
 import { cn } from "@/lib/utils";
 import Providers from "./providers";
+import WelcomeLoader from "@/components/ui/WelcomeScreen";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -39,16 +40,17 @@ export default function RootLayout({
       <body
         suppressHydrationWarning
         className={`
-    ${inter.className}
-    min-h-screen
-    bg-background
-    text-foreground
-    antialiased
-    overflow-x-hidden
-    transition-colors duration-300
-  `}
+          ${inter.className}
+          min-h-screen
+          bg-background
+          text-foreground
+          antialiased
+          overflow-x-hidden
+          transition-colors duration-300
+        `}
       >
         <Providers>
+          <WelcomeLoader />
           <TooltipProvider>
             <Navbar />
             {children}

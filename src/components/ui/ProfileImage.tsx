@@ -20,6 +20,7 @@ export default function ProfileImage() {
         src="/images/WhatsApp%20Image%202026-05-16%20at%202.24.02%20AM.jpeg"
         alt="Profile"
         fill
+        sizes="(max-width: 768px) 176px, 224px"
         className="rounded-full object-cover border border-white/10 shadow-xl relative z-10"
       />
     </motion.div>

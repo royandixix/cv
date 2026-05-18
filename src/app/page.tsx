@@ -17,11 +17,21 @@ import { Code2 } from "lucide-react";
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const [isOnline, setIsOnline] = useState(true);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    const hasSeenIntro = sessionStorage.getItem("intro-seen");
+
     const timer = setTimeout(() => {
-      setLoading(false);
+      if (!hasSeenIntro) {
+        sessionStorage.setItem("intro-seen", "true");
+        setLoading(false);
+      }
     }, 4500);
+
+    if (hasSeenIntro) {
+      setTimeout(() => setLoading(false), 0);
+    }
 
     return () => clearTimeout(timer);
   }, []);
@@ -30,8 +40,11 @@ export default function Home() {
     const handleOnline = () => setIsOnline(true);
     const handleOffline = () => setIsOnline(false);
 
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setIsOnline(navigator.onLine);
+    const updateOnlineStatus = () => {
+      setIsOnline(navigator.onLine);
+    };
+
+    updateOnlineStatus();
 
     window.addEventListener("online", handleOnline);
     window.addEventListener("offline", handleOffline);
@@ -41,6 +54,16 @@ export default function Home() {
       window.removeEventListener("offline", handleOffline);
     };
   }, []);
+
+  useEffect(() => {
+    const id = requestAnimationFrame(() => {
+      setMounted(true);
+    });
+
+    return () => cancelAnimationFrame(id);
+  }, []);
+
+  if (!mounted) return null;
 
   if (!isOnline) {
     return <OfflineScreen />;
