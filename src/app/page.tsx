@@ -17,11 +17,8 @@ import { Code2 } from "lucide-react";
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const [isOnline, setIsOnline] = useState(true);
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-
     const timer = setTimeout(() => {
       setLoading(false);
     }, 4500);
@@ -33,6 +30,9 @@ export default function Home() {
     const handleOnline = () => setIsOnline(true);
     const handleOffline = () => setIsOnline(false);
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setIsOnline(navigator.onLine);
+
     window.addEventListener("online", handleOnline);
     window.addEventListener("offline", handleOffline);
 
@@ -41,8 +41,6 @@ export default function Home() {
       window.removeEventListener("offline", handleOffline);
     };
   }, []);
-
-  if (!mounted) return null;
 
   if (!isOnline) {
     return <OfflineScreen />;
@@ -58,10 +56,8 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="fixed inset-0 z-[9999] bg-black overflow-hidden"
           >
-            {/* BACKGROUND GLOW */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent_40%)]" />
 
-            {/* GRID */}
             <div
               className="absolute inset-0 opacity-[0.03]"
               style={{
@@ -73,7 +69,6 @@ export default function Home() {
               }}
             />
 
-            {/* FLOAT LIGHT */}
             <motion.div
               animate={{ x: [0, 60, 0], y: [0, -30, 0] }}
               transition={{
@@ -84,7 +79,6 @@ export default function Home() {
               className="absolute top-1/4 left-1/3 w-72 h-72 bg-white/5 blur-3xl rounded-full"
             />
 
-            {/* CONTENT */}
             <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center">
               <motion.div
                 initial={{ opacity: 0, scale: 0.85 }}
@@ -116,7 +110,6 @@ export default function Home() {
                 Fullstack Web Developer & Software Engineer
               </motion.p>
 
-              {/* LOADING DOTS */}
               <div className="flex items-center gap-2 mt-12">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <motion.div
