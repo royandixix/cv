@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -38,13 +37,45 @@ export default function Hero() {
         en_word: "English (Word)",
       },
       inputValue: "id_pdf",
-      background: "#09090b",
+      background: "#101014",
       color: "#ffffff",
       showCancelButton: true,
       confirmButtonText: "Download",
       cancelButtonText: "Cancel",
       confirmButtonColor: "#ffffff",
-      cancelButtonColor: "#27272a",
+      cancelButtonColor: "#303036",
+      didOpen: () => {
+        const confirmButton = Swal.getConfirmButton();
+        const cancelButton = Swal.getCancelButton();
+
+        if (confirmButton) {
+          confirmButton.style.setProperty(
+            "background-color",
+            "#ffffff",
+            "important",
+          );
+          confirmButton.style.setProperty("color", "#111111", "important");
+          confirmButton.style.setProperty("font-weight", "600", "important");
+          confirmButton.style.setProperty("border-radius", "8px", "important");
+        }
+
+        if (cancelButton) {
+          cancelButton.style.setProperty(
+            "background-color",
+            "#303036",
+            "important",
+          );
+          cancelButton.style.setProperty("color", "#ffffff", "important");
+          cancelButton.style.setProperty("border-radius", "8px", "important");
+        }
+
+        const input = Swal.getInput();
+
+        if (input) {
+          input.style.setProperty("background-color", "#222227", "important");
+          input.style.setProperty("color", "#ffffff", "important");
+        }
+      },
     });
 
     if (!result.isConfirmed || typeof result.value !== "string") {
@@ -118,14 +149,12 @@ export default function Hero() {
           Royandi, S.Kom.
         </h1>
 
-        <p className="text-xl text-zinc-300">
-          Software Engineer
-        </p>
+        <p className="text-xl text-zinc-300">Software Engineer</p>
 
         <p className="text-sm sm:text-base text-zinc-500 leading-relaxed max-w-xl">
-          I am a Software Engineer based in Mamuju, West Sulawesi,
-          Indonesia. I develop modern and scalable software using
-          Laravel, React, Next.js, Vue.js, Svelte, and TypeScript.
+          I am a Software Engineer based in Mamuju, West Sulawesi, Indonesia. I
+          develop modern and scalable software using Laravel, React, Next.js,
+          Vue.js, Svelte, and TypeScript.
         </p>
 
         <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-5">
