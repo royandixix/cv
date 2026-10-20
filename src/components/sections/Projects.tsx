@@ -11,7 +11,7 @@ import {
   CheckCircle2,
   Code2,
   ExternalLink,
-  Github,
+  GitBranch,
   Laptop2,
   Smartphone,
   TicketCheck,
@@ -409,7 +409,7 @@ export default function Projects() {
                         rel="noopener noreferrer"
                         className="inline-flex min-h-10 items-center gap-2 rounded-lg border border-white/20 px-3 py-2 text-sm font-medium text-white transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                       >
-                        <Github
+                        <GitBranch
                           size={17}
                           aria-hidden="true"
                         />
@@ -468,7 +468,7 @@ export default function Projects() {
             rel="noopener noreferrer"
             className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           >
-            <Github
+            <GitBranch
               size={18}
               aria-hidden="true"
             />
