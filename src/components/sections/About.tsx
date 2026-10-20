@@ -1,3 +1,4 @@
+
 "use client";
 
 import { motion } from "framer-motion";
@@ -9,30 +10,33 @@ export default function About() {
     "Laravel",
     "React",
     "Next.js",
-    "TypeScript",
-    "Supabase",
     "Vue.js",
+    "Svelte",
+    "TypeScript",
+    "Tailwind CSS",
     "Node.js",
+    "Supabase",
     "Docker",
   ];
 
   const profile = {
-    name: '"Royan Dixix"',
-    role: '"Freelance Full-Stack Web Developer"',
+    name: '"Royandi, S.Kom."',
+    role: '"Software Engineer"',
     location: '"Mamuju, West Sulawesi, Indonesia"',
     frontend:
-      '{"React", "Next.js", "Vue.js", "Angular", "Tailwind CSS", "TypeScript"}',
-    backend: '{"Laravel", "Node.js", "Supabase", "Firebase"}',
-    tools: '{"Git", "Docker", "Figma", "Postman", "Linux", "Vite"}',
-    database: '{"MySQL", "Supabase", "Firebase"}',
-    available: "true; // open to remote work & global opportunities",
+      '{"React", "Next.js", "Vue.js", "Svelte", "TypeScript", "Tailwind CSS"}',
+    backend:
+      '{"Laravel", "Node.js", "Express.js", "REST API"}',
+    tools:
+      '{"Git", "GitHub", "Docker", "Postman", "Linux", "Vite"}',
+    database:
+      '{"MySQL", "PostgreSQL", "Supabase", "Firebase"}',
+    available: "true",
   };
 
   return (
     <section id="about" className="py-16 flex justify-center">
       <div className="max-w-5xl w-full px-6 space-y-10">
-
-        {/* TITLE */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -42,55 +46,60 @@ export default function About() {
           About Me
         </motion.h2>
 
-        {/* CONTENT WRAPPER */}
         <div className="max-w-2xl space-y-4">
-
-          {/* INTRO */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-zinc-400 leading-relaxed text-sm sm:text-base"
           >
-            I am a Computer Science student at{" "}
+            I am a Computer Science graduate with a Bachelor's
+            Degree in Informatics Engineering from{" "}
             <span className="text-white font-medium">
               Universitas Dipa Makassar
             </span>
-            , Class of 2022, majoring in{" "}
-            <span className="text-white font-medium">
-              Informatics Engineering
-            </span>
-            . I focus on building modern, scalable, and high-performance web applications
-            as a Fullstack Web Developer and Software Engineer. My passion lies in
-            crafting seamless user experiences on the frontend while ensuring robust,
-            efficient, and maintainable systems on the backend. I enjoy turning complex
-            problems into simple, elegant, and practical solutions through clean code
-            and thoughtful architecture.
+            . I hold a Sarjana Komputer (S.Kom.) degree and
+            specialize in software engineering and modern web
+            application development.
           </motion.p>
 
-          {/* ORGANIZATION */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-zinc-400 leading-relaxed text-sm sm:text-base"
+          >
+            As a{" "}
+            <span className="text-white font-medium">
+              Software Engineer
+            </span>
+            , I develop applications using Laravel, Next.js,
+            React, Vue.js, Svelte, TypeScript, and Node.js.
+            I focus on building maintainable software,
+            reliable backend systems, and user-friendly interfaces.
+          </motion.p>
+
           <motion.p
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             className="text-zinc-500 leading-relaxed text-sm sm:text-base"
           >
-            I am actively involved in{" "}
+            I was involved in{" "}
             <span className="text-white font-medium">
               UKM KeDai Computerworks
             </span>
-            , a student organization focused on technology, programming, and digital
-            innovation. I started as <span className="text-white">Scientific Staff (2024–2025)</span>,
-            where I contributed to research activities, technical workshops, and knowledge-sharing
-            sessions within the organization. I then advanced to the role of{" "}
-            <span className="text-white">Scientific Coordinator</span>, taking on greater
-            responsibility in planning and leading technical programs. Currently, I serve as{" "}
-            <span className="text-white">Vice Chairman II (2025–2026)</span>, where I oversee
-            organizational development, coordinate inter-division collaboration, and help drive
-            the vision of the organization forward.
+            , a student organization focused on technology,
+            programming, and digital innovation.
+            My experience includes Scientific Staff,
+            Scientific Coordinator, and{" "}
+            <span className="text-white font-medium">
+              Vice Chairman II (2025–2026)
+            </span>
+            . Through these roles, I contributed to technical
+            programs, collaboration, and organizational development.
           </motion.p>
 
-          {/* SKILLS */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -106,7 +115,6 @@ export default function About() {
             ))}
           </motion.div>
 
-          {/* CODE BLOCK */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -120,21 +128,20 @@ export default function About() {
             </p>
 
             {[
-              ["String ", "name     ", profile.name],
-              ["String ", "role     ", profile.role],
-              ["String ", "location ", profile.location],
-              ["String[]", "frontend ", profile.frontend],
-              ["String[]", "backend  ", profile.backend],
-              ["String[]", "tools    ", profile.tools],
-              ["String[]", "database ", profile.database],
-              ["boolean ", "available", profile.available],
-            ].map(([type, key, value], i) => (
-              <p key={i} className="pl-4">
+              ["String", "name", profile.name],
+              ["String", "role", profile.role],
+              ["String", "location", profile.location],
+              ["String[]", "frontend", profile.frontend],
+              ["String[]", "backend", profile.backend],
+              ["String[]", "tools", profile.tools],
+              ["String[]", "database", profile.database],
+              ["boolean", "available", profile.available],
+            ].map(([type, key, value]) => (
+              <p key={key} className="pl-4">
                 <span className="text-blue-400">{type}</span>{" "}
                 <span className="text-white">{key}</span>
                 <span> = </span>
-                <span className="text-green-400">{value}</span>
-                {!key.includes("available") && ";"}
+                <span className="text-green-400">{value}</span>;
               </p>
             ))}
 
@@ -142,7 +149,6 @@ export default function About() {
           </motion.div>
         </div>
 
-        {/* GALLERY (OUTSIDE max-w-2xl BUT STILL CLEAN) */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -151,7 +157,6 @@ export default function About() {
           <Gallery />
           <UniversityGallery />
         </motion.div>
-
       </div>
     </section>
   );

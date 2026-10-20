@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { Inter, Geist } from "next/font/google";
 
@@ -6,8 +7,8 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
-
 import { cn } from "@/lib/utils";
+
 import Providers from "./providers";
 import WelcomeLoader from "@/components/ui/WelcomeScreen";
 
@@ -22,8 +23,22 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Roy Andi | Portfolio",
-  description: "Frontend Developer Portfolio",
+  title: "Royandi, S.Kom. | Software Engineer",
+  description:
+    "Portfolio of Royandi, S.Kom., a Software Engineer based in Mamuju, West Sulawesi, Indonesia. Experienced with Laravel, Next.js, React, Vue.js, Svelte, and TypeScript.",
+  keywords: [
+    "Royandi",
+    "Software Engineer",
+    "Fullstack Developer",
+    "Laravel",
+    "Next.js",
+    "React",
+    "Vue.js",
+    "Svelte",
+    "TypeScript",
+    "Mamuju",
+    "Sulawesi Barat",
+  ],
 };
 
 export default function RootLayout({
@@ -54,7 +69,11 @@ export default function RootLayout({
           <TooltipProvider>
             <Navbar />
             {children}
-            <Toaster richColors position="top-right" closeButton />
+            <Toaster
+              richColors
+              position="top-right"
+              closeButton
+            />
           </TooltipProvider>
         </Providers>
       </body>

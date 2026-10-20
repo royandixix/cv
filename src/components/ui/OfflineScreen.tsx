@@ -1,6 +1,11 @@
+
 "use client";
 
-import { WifiOff, RefreshCcw, FileText } from "lucide-react";
+import {
+  WifiOff,
+  RefreshCcw,
+  FileText,
+} from "lucide-react";
 
 export default function OfflineScreen() {
   return (
@@ -8,7 +13,10 @@ export default function OfflineScreen() {
       <div className="max-w-md w-full">
         <div className="flex justify-center">
           <div className="w-20 h-20 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-xl shadow-xl">
-            <WifiOff size={34} className="text-white" />
+            <WifiOff
+              size={34}
+              className="text-white"
+            />
           </div>
         </div>
 
@@ -17,11 +25,13 @@ export default function OfflineScreen() {
         </h1>
 
         <p className="mt-3 text-zinc-400 text-sm leading-relaxed">
-          No internet connection detected. Please check your network and try again.
+          No internet connection detected. Please check your
+          network and try again.
         </p>
 
         <div className="mt-10 flex flex-col gap-3">
           <button
+            type="button"
             onClick={() => window.location.reload()}
             className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white text-black font-medium hover:opacity-90 transition"
           >
@@ -30,8 +40,9 @@ export default function OfflineScreen() {
           </button>
 
           <a
-            href="/cv/roy-andi-cv.pdf"
+            href="/cv/Royandi_CV_Indonesia_ATS.pdf"
             target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-white/15 text-white hover:bg-white/5 transition"
           >
             <FileText size={18} />

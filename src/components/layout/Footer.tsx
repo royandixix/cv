@@ -1,3 +1,4 @@
+
 "use client";
 
 import { motion } from "framer-motion";
@@ -7,55 +8,51 @@ import {
   MapPin,
   ArrowUpRight,
   Code2,
-  Link,
 } from "lucide-react";
 
 export default function Footer() {
+  const linkClass =
+    "flex items-center gap-2 text-zinc-400 hover:text-white transition";
+
   return (
     <footer className="mt-24 border-t border-white/10">
       <div className="max-w-5xl mx-auto px-6 py-12">
-
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="flex flex-col md:flex-row justify-between gap-10"
         >
-
           <div className="space-y-2">
             <h2 className="text-xl font-semibold text-white">
-              Roy Andi
+              Royandi, S.Kom.
             </h2>
 
             <p className="text-sm text-zinc-400 max-w-md">
-              Fullstack Developer — Software Engineer
+              Software Engineer
             </p>
 
             <div className="flex items-center gap-2 text-xs text-zinc-500">
               <MapPin size={14} />
-              Mamuju Sulawesi Barat, Indonesia
+              Mamuju, Sulawesi Barat, Indonesia
             </div>
           </div>
 
-          <div className="flex flex-col gap-2 text-sm">
-
+          <div className="flex flex-col gap-3 text-sm">
             <a
               href="https://github.com/royandixix"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-zinc-400 hover:text-white transition"
+              className={linkClass}
             >
               <Code2 size={16} />
               GitHub
               <ArrowUpRight size={12} />
             </a>
 
-            {/* EMAIL FIX GMAIL WEB */}
             <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=randiroyandi@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-zinc-400 hover:text-white transition"
+              href="mailto:randiroyandi@gmail.com"
+              className={linkClass}
             >
               <Mail size={16} />
               Email
@@ -63,33 +60,31 @@ export default function Footer() {
             </a>
 
             <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-zinc-400 hover:text-white transition"
+              href="/cv/Royandi_CV_Indonesia_ATS.pdf"
+              download
+              className={linkClass}
             >
-              <Link size={16} />
-              LinkedIn
+              <FileText size={16} />
+              CV Indonesia
               <ArrowUpRight size={12} />
             </a>
 
             <a
-              href="/cv.pdf"
-              className="flex items-center gap-2 text-zinc-400 hover:text-white transition"
+              href="/cv/Royandi_CV_English_ATS.pdf"
+              download
+              className={linkClass}
             >
               <FileText size={16} />
-              CV
+              CV English
               <ArrowUpRight size={12} />
             </a>
-
           </div>
         </motion.div>
 
         <div className="mt-8 pt-4 border-t border-white/10 flex flex-col md:flex-row justify-between text-xs text-zinc-500 gap-2">
-          <p>© 2026 Roy Andi</p>
+          <p>© 2026 Royandi. All rights reserved.</p>
           <p>Built with Next.js</p>
         </div>
-
       </div>
     </footer>
   );

@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -7,72 +8,62 @@ import Swal from "sweetalert2";
 
 export default function Hero() {
   const handleDownloadCV = async () => {
-    const result = await Swal.fire({
-      title: "Download CV?",
-      text: "Do you want to download Roy Andi's CV?",
-      icon: "question",
+    const files = {
+      id_pdf: {
+        href: "/cv/Royandi_CV_Indonesia_ATS.pdf",
+        name: "Royandi_CV_Indonesia_ATS.pdf",
+      },
+      en_pdf: {
+        href: "/cv/Royandi_CV_English_ATS.pdf",
+        name: "Royandi_CV_English_ATS.pdf",
+      },
+      id_word: {
+        href: "/cv/Royandi_CV_Indonesia_ATS.docx",
+        name: "Royandi_CV_Indonesia_ATS.docx",
+      },
+      en_word: {
+        href: "/cv/Royandi_CV_English_ATS.docx",
+        name: "Royandi_CV_English_ATS.docx",
+      },
+    };
 
+    const result = await Swal.fire({
+      title: "Download CV",
+      text: "Select language and format",
+      input: "select",
+      inputOptions: {
+        id_pdf: "Bahasa Indonesia (PDF)",
+        en_pdf: "English (PDF)",
+        id_word: "Bahasa Indonesia (Word)",
+        en_word: "English (Word)",
+      },
+      inputValue: "id_pdf",
       background: "#09090b",
       color: "#ffffff",
-
       showCancelButton: true,
-
       confirmButtonText: "Download",
       cancelButtonText: "Cancel",
-
-      // BUTTON POSITION
       confirmButtonColor: "#ffffff",
       cancelButtonColor: "#27272a",
-
-      // FIX TEXT COLOR BUTTON
-      customClass: {
-        popup:
-          "rounded-2xl border border-white/10 bg-zinc-950",
-        title: "text-white text-3xl font-bold",
-        htmlContainer: "text-zinc-400",
-
-        // BUTTON STYLE
-        confirmButton:
-          "!text-black !font-semibold !rounded-xl !px-6 !py-3",
-
-        cancelButton:
-          "!text-white !rounded-xl !px-6 !py-3",
-      },
-
-      // CANCEL RIGHT
-      reverseButtons: false,
     });
 
-    if (result.isConfirmed) {
-      // DOWNLOAD FILE
-      const link = document.createElement("a");
-      link.href = "/cv/roy-andi-cv.pdf";
-      link.download = "Roy-Andi-CV.pdf";
-
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-
-      // SUCCESS ALERT
-      Swal.fire({
-        title: "Download Started",
-        text: "Your CV has been downloaded successfully.",
-        icon: "success",
-
-        background: "#09090b",
-        color: "#ffffff",
-
-        timer: 2200,
-        showConfirmButton: false,
-
-        customClass: {
-          popup:
-            "rounded-2xl border border-white/10 bg-zinc-950",
-          title: "text-white",
-          htmlContainer: "text-zinc-400",
-        },
-      });
+    if (!result.isConfirmed || typeof result.value !== "string") {
+      return;
     }
+
+    if (!(result.value in files)) {
+      return;
+    }
+
+    const file = files[result.value as keyof typeof files];
+
+    const link = document.createElement("a");
+    link.href = file.href;
+    link.download = file.name;
+
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
   };
 
   return (
@@ -80,19 +71,16 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen flex flex-col md:flex-row items-center justify-center gap-12 px-6 overflow-hidden"
     >
-      {/* BACKGROUND PARTICLES */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {Array.from({ length: 40 }).map((_, i) => (
           <motion.span
             key={i}
             className="absolute w-1 h-1 bg-white/30 rounded-full"
-            style={
-              {
-                left: `${(i * 7) % 100}%`,
-                top: `${(i * 13) % 100}%`,
-                position: "absolute",
-              } as React.CSSProperties
-            }
+            style={{
+              left: `${(i * 7) % 100}%`,
+              top: `${(i * 13) % 100}%`,
+              position: "absolute",
+            }}
             animate={{
               y: [0, 30, 0],
               opacity: [0.2, 0.8, 0.2],
@@ -107,7 +95,6 @@ export default function Hero() {
         ))}
       </div>
 
-      {/* PROFILE IMAGE */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -116,7 +103,7 @@ export default function Hero() {
       >
         <Image
           src="/images/WhatsApp Image 2026-05-16 at 12.49.26 AM.jpeg"
-          alt="Roy Profile"
+          alt="Royandi Profile"
           fill
           priority
           sizes="(max-width: 768px) 100vw, 50vw"
@@ -124,26 +111,24 @@ export default function Hero() {
         />
       </motion.div>
 
-      {/* CONTENT */}
       <div className="text-center md:text-left space-y-5 max-w-2xl z-10">
         <p className="text-zinc-400">Hi, I am</p>
 
         <h1 className="text-5xl sm:text-6xl font-bold tracking-tight text-white">
-          Roy Andi
+          Royandi, S.Kom.
         </h1>
 
         <p className="text-xl text-zinc-300">
-          Fullstack Web Developer & Software Engineer
+          Software Engineer
         </p>
 
         <p className="text-sm sm:text-base text-zinc-500 leading-relaxed max-w-xl">
-          I build modern, scalable, and high-performance web
-          applications using Next.js, React, Laravel, and Node.js.
+          I am a Software Engineer based in Mamuju, West Sulawesi,
+          Indonesia. I develop modern and scalable software using
+          Laravel, React, Next.js, Vue.js, Svelte, and TypeScript.
         </p>
 
-        {/* BUTTONS */}
         <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-5">
-          {/* GITHUB */}
           <a
             href="https://github.com/royandixix"
             target="_blank"
@@ -154,8 +139,8 @@ export default function Hero() {
             GitHub
           </a>
 
-          {/* DOWNLOAD CV */}
           <button
+            type="button"
             onClick={handleDownloadCV}
             className="flex items-center gap-2 px-6 py-3 rounded-full border border-white/10 bg-white/5 text-white hover:bg-white/10 transition duration-300"
           >
@@ -163,7 +148,6 @@ export default function Hero() {
             Download CV
           </button>
 
-          {/* PROJECTS */}
           <a
             href="#projects"
             className="flex items-center gap-2 px-6 py-3 rounded-full border border-zinc-700 text-white hover:border-zinc-400 hover:bg-white/5 transition duration-300"

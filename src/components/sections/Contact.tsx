@@ -1,7 +1,8 @@
+
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Code2, Send, Link, FileText } from "lucide-react";
+import { Mail, Code2, Send, FileText } from "lucide-react";
 
 const card =
   "flex items-center gap-3 px-5 py-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition";
@@ -10,7 +11,6 @@ export default function Contact() {
   return (
     <section id="contact" className="flex justify-center py-24">
       <div className="max-w-5xl w-full px-6">
-
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -24,7 +24,9 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           className="text-zinc-400 max-w-2xl"
         >
-          Feel free to reach out for collaboration or freelance work.
+          I am open to Software Engineer opportunities,
+          collaborations, and freelance development projects.
+          Feel free to contact me.
         </motion.p>
 
         <motion.div
@@ -32,30 +34,40 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           className="mt-8 flex flex-col gap-4 max-w-md"
         >
+          <a
+            href="mailto:randiroyandi@gmail.com"
+            className={card}
+          >
+            <Mail size={18} />
+            randiroyandi@gmail.com
+          </a>
 
           <a
-  href="https://mail.google.com/mail/?view=cm&fs=1&to=randiroyandi@gmail.com"
-  target="_blank"
-  rel="noopener noreferrer"
-  className={card}
->
-  <Mail size={18} />
-  Email
-</a>
-
-          <a href="https://github.com/royandixix" target="_blank" className={card}>
+            href="https://github.com/royandixix"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={card}
+          >
             <Code2 size={18} />
             GitHub
           </a>
 
-          <a href="https://linkedin.com" target="_blank" className={card}>
-            <Link size={18} />
-            LinkedIn
+          <a
+            href="/cv/Royandi_CV_Indonesia_ATS.pdf"
+            download
+            className={card}
+          >
+            <FileText size={18} />
+            Download CV Indonesia (PDF)
           </a>
 
-          <a href="/cv.pdf" className={card}>
+          <a
+            href="/cv/Royandi_CV_English_ATS.pdf"
+            download
+            className={card}
+          >
             <FileText size={18} />
-            Download CV
+            Download CV English (PDF)
           </a>
 
           <a
@@ -65,7 +77,6 @@ export default function Contact() {
             <Send size={18} />
             Send Message
           </a>
-
         </motion.div>
       </div>
     </section>
